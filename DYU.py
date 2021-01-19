@@ -1,22 +1,38 @@
-from IPython import get_ipython
-get_ipython().system('pip install openpyxl')
+print("""
+
+||\        \     //      ||      ||
+|| \        \   //       ||      ||     ---------------
+||  \        \ //        ||      ||     by str1g1f0rmes
+||  //        ||         ||      ||     ---------------
+|| //         ||         ||      ||
+||//          ||         ||======||  
+
+""")
+
+
 from openpyxl import Workbook
 import pandas as pd
 
 
-a = pd.read_excel("Yoklama.xlsx")
-asd = a.iloc[:,0]
+sınıfl_i = input("Sınıf Listesinin Adını Giriniz: ")
 
-b = pd.read_excel("Sınıf Listesi.xlsx")
-bsd = b.iloc[:,0]
+SınıfL = pd.read_excel(sınıfl_i)
+SınıfL_1 = SınıfL.iloc[:,0]
 
 
-q = list(set(bsd)-set(asd))
+yoklama_i = input("Yoklama Listesinin Adını Giriniz: ")
+
+Yoklama= pd.read_excel(yoklama_i)
+Yoklama_1 = Yoklama.iloc[:,0]
+
+
+Katılmayanlar = list(set(SınıfL_1)-set(Yoklama_1))
 
 
 yoklama = Workbook()
 sheet = yoklama.active
-sheet.append(q)
+sheet.append(Katılmayanlar)
 yoklama.save("Katılmayan Öğrenciler.xlsx")
 yoklama.close()
 
+print("\nİşlem Gerçekleştirildi, Kolay Gelsin.")
