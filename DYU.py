@@ -29,10 +29,12 @@ Yoklama_1 = Yoklama.iloc[:,0]
 Katılmayanlar = list(set(SınıfL_1)-set(Yoklama_1))
 
 
+katılmayanlar_i = input("Katılmayanlar Listesinin Adı Ne Olsun?: ")
+
 yoklama = Workbook()
 sheet = yoklama.active
 sheet.append(Katılmayanlar)
-yoklama.save("Katılmayan Öğrenciler.xlsx")
+yoklama.save(katılmayanlar_i)
 yoklama.close()
 
 print("\nİşlem Gerçekleştirildi, Kolay Gelsin.")
