@@ -2,9 +2,10 @@
 DYU, bazı programlar aracılığıyla yoklama alan hocalarımızın işini kolaylaştırmak amacıyla yapılmıştır.
 
 ## İndirmek
-İndirmek için bu komutu yazmanız yeterlidir.
+İndirmek için bu komutları yazmanız yeterlidir.
  ```bash
  git clone https://github.com/str1g1f0rmes/DYU
+ pip install openpyxl
  ```
 
 ## Kullanmak
